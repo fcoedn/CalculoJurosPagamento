@@ -6,13 +6,37 @@
     android:layout_height="match_parent"
     tools:context="com.example.francisco.calculojurospagamento.MainMenu">
 
-    <TextView
+    <Button
+        android:id="@+id/Calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/Calcular"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+
+    <Button
+        android:id="@+id/NovoMes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NovoMes"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <Button
+        android:id="@+id/Config"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Config"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="231dp" />
+
+    <Button
+        android:id="@+id/Sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Sair"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="382dp" />
 
 </android.support.constraint.ConstraintLayout>

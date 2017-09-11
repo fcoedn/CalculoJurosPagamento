@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">CalculoJurosPagamento</string>
+    <string name="app_name">Calculo Juros Pagamento</string>
+    <string name="Calcular">Calcular</string>
+    <string name="NovoMes">Novo Mês</string>
+    <string name="Config">Config</string>
+    <string name="Sair">Sair</string>
 </resources>
