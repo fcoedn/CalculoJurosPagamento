@@ -51,54 +51,76 @@
         app:layout_constraintGuide_begin="133dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/DtPagamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="73dp" />
+        android:layout_marginBottom="36dp"
+        android:layout_marginStart="36dp"
+        android:text="@string/DtPagamento"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/DtVencimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="173dp" />
+        android:layout_marginBottom="48dp"
+        android:layout_marginStart="36dp"
+        android:text="@string/DtVencimento"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/VlrPagar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="274dp" />
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="36dp"
+        android:text="@string/VlrPagar"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline13" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="date"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="59dp" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline13" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="date"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="158dp" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="@+id/guideline13" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:layout_marginStart="36dp"
+        android:text="@string/Calcular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline13" />
 
 </android.support.constraint.ConstraintLayout>
