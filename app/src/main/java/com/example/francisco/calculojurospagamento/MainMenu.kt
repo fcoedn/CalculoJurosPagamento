@@ -15,7 +15,6 @@ class MainMenu : AppCompatActivity() {
     }
 
         fun jurosCalcular (view: View) {
-            // Create an Intent to start the second activity
             val calculoIntent =  Intent(this, MainCalculo::class.java)
 
             // Get the current value of the text view.
@@ -31,10 +30,31 @@ class MainMenu : AppCompatActivity() {
             //calculoIntent.setFlag(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             // Start an activity if it's safe
 
-            //if (isIntentSafe) {
-                startActivity(calculoIntent);
-           // }
+            startActivity(calculoIntent);
+
 
 
         }
+
+    fun jurosNovoMes (view: View) {
+        val novomesIntent =  Intent(this, MainNovoMes::class.java)
+
+        startActivity(novomesIntent);
+
+    }
+
+    fun jurosConfig (view: View) {
+        val configIntent =  Intent(this, MainConfig::class.java)
+
+        startActivity(configIntent);
+
+    }
+
+    fun jurosSair (view: View) {
+        // Create an Intent to start the second activity
+      //  val sairIntent =  Intent(this, Mainsair::class.java)
+
+      //  startActivity(sairIntent);
+
+    }
 }
