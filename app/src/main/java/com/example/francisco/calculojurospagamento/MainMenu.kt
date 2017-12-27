@@ -2,8 +2,10 @@ package com.example.francisco.calculojurospagamento
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+
 
 class MainMenu : AppCompatActivity() {
 
@@ -32,8 +34,6 @@ class MainMenu : AppCompatActivity() {
 
             startActivity(calculoIntent);
 
-
-
         }
 
     fun jurosNovoMes (view: View) {
@@ -51,10 +51,13 @@ class MainMenu : AppCompatActivity() {
     }
 
     fun jurosSair (view: View) {
-        // Create an Intent to start the second activity
-      //  val sairIntent =  Intent(this, Mainsair::class.java)
 
-      //  startActivity(sairIntent);
+        AlertDialog.Builder(this)
+                .setTitle("Notification")
+                .setMessage("Finalizando")
+                .setPositiveButton("Ok", { dialog, which -> }).show()
+
+       finish()
 
     }
 }
