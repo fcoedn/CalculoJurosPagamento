@@ -12,10 +12,11 @@ class MainMenu : AppCompatActivity() {
         setContentView(R.layout.activity_main_menu)
 
         // https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/index.html?index=..%2F..%2Findex#7
+    }
 
         fun jurosCalcular (view: View) {
             // Create an Intent to start the second activity
-            val calculoIntent = Intent(this, MainCalculo::class.java)
+            val calculoIntent =  Intent(this, MainCalculo::class.java)
 
             // Get the current value of the text view.
             //val countString = textView.text.toString()
@@ -24,10 +25,16 @@ class MainMenu : AppCompatActivity() {
             //val count = Integer.parseInt(countString)
 
             // Add the count to the extras for the Intent.
-            randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
+            //randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
 
             // Start the new activity.
-            startActivity(calculoIntent)
+            //calculoIntent.setFlag(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            // Start an activity if it's safe
+
+            //if (isIntentSafe) {
+                startActivity(calculoIntent);
+           // }
+
+
         }
-    }
 }

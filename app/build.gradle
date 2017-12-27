@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '27.0.1'
+    buildToolsVersion '26.0.1'
     defaultConfig {
         applicationId "com.example.francisco.calculojurospagamento"
         minSdkVersion 26
@@ -20,6 +20,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+       // debug {
+       //     minifyEnabled true
+       //     proguardFile 'proguard-android-optimize.txt'
+       //     zipAlignEnabled true
+       // }
     }
 }
 
@@ -33,3 +38,4 @@ dependencies {
     })
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
+
