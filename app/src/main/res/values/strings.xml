@@ -4,7 +4,7 @@
     <string name="NovoMes">Novo Mês</string>
     <string name="Config">Config</string>
     <string name="Sair">Sair</string>
-    <string name="DtPagamento">Pagamento</string>
-    <string name="DtVencimento">Vencimento</string>
-    <string name="VlrPagar">Valor a Pagar</string>
+    <string name="TxDtPagamento">Pagamento</string>
+    <string name="TxDtVencimento">Vencimento</string>
+    <string name="TxVlrPagar">Valor a Pagar</string>
 </resources>

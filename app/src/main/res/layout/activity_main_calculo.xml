@@ -51,37 +51,37 @@
         app:layout_constraintGuide_begin="133dp" />
 
     <TextView
-        android:id="@+id/DtPagamento"
+        android:id="@+id/TxDtPagamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:layout_marginStart="36dp"
-        android:text="@string/DtPagamento"
+        android:text="@string/TxDtPagamento"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/DtVencimento"
+        android:id="@+id/TxDtVencimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:layout_marginStart="36dp"
-        android:text="@string/DtVencimento"
+        android:text="@string/TxDtVencimento"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/VlrPagar"
+        android:id="@+id/TxVlrPagar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:layout_marginStart="36dp"
-        android:text="@string/VlrPagar"
+        android:text="@string/TxVlrPagar"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/VlrPagar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
@@ -92,7 +92,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline13" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/DtPagamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -103,7 +103,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline13" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/DtVencimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
