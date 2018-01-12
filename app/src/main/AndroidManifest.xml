@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MainCalculo" />
         <activity android:name=".MainConfig" />
-        <activity android:name=".MainNovoMes"></activity>
+        <activity android:name=".MainNovoMes" />
+        <activity android:name=".MainResultado"></activity>
     </application>
 
 </manifest>
