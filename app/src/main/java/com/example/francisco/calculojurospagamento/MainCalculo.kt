@@ -80,11 +80,13 @@ class MainCalculo : AppCompatActivity() {
                 val b = a.toInt() * 2
                 //result.setText(e.toString())
 
-                AlertDialog.Builder(this)
-                        .setTitle("Juros")
-                        .setMessage("Valor $b")
-                        .setPositiveButton("Ok", { dialog, which -> }).show()
+                //AlertDialog.Builder(this)
+                //        .setTitle("Juros")
+                //        .setMessage("Valor $b")
+                //        .setPositiveButton("Ok", { dialog, which -> }).show()
+               // conts val FCO
                 val resultadoIntent =  Intent(this, MainResultado::class.java)
+                resultadoIntent.putExtra(MainResultado.FCO,b)
                 startActivity(resultadoIntent);
             }
         }
