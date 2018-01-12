@@ -6,4 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".MainResultado">
 
+    <TextView
+        android:id="@+id/txPrestacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Prestação"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/txjurosprest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Juros"
+        app:layout_constraintTop_toBottomOf="@+id/txPrestacao"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/txTotalPre"
+        android:layout_width="74dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="44dp"
+        android:text="Total"
+        app:layout_constraintTop_toTopOf="@+id/txjurosprest"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/txPorConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="PorConta"
+        app:layout_constraintTop_toBottomOf="@+id/txTotalPre"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/txJurosPc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Juros"
+        app:layout_constraintTop_toBottomOf="@+id/txPorConta"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/txTotalPc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Total"
+        app:layout_constraintTop_toBottomOf="@+id/txJurosPc"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btnNovoCal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="444dp"
+        android:text="Novo Cálculo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="67dp" />
+
+    <Button
+        android:id="@+id/btnSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="444dp"
+        android:text="Sair"
+        app:layout_constraintStart_toEndOf="@+id/btnNovoCal"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
