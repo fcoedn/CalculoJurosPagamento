@@ -15,14 +15,33 @@ class MainCalculo : AppCompatActivity() {
         setContentView(R.layout.activity_main_calculo)
 
         // Data Atual
-        val textView: TextView = findViewById(R.id.DtPagamento)
-        textView.text = SimpleDateFormat("dd.MM.yyyy").format(System.currentTimeMillis())
+        val DtPagamento: TextView = findViewById(R.id.DtPagamento)
+        DtPagamento.text = SimpleDateFormat("dd.MM.yyyy").format(System.currentTimeMillis())
+        DtPagamento.setOnClickListener {
+            var cal = Calendar.getInstance()
+
+            val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                val myFormat = "dd.MM.yyyy" // mention the format you need
+                val sdf = SimpleDateFormat(myFormat, Locale.US)
+                DtPagamento.text = sdf.format(cal.time)
+
+            }
+
+            DatePickerDialog(this@MainCalculo, dateSetListener,
+                    cal.get(Calendar.YEAR),
+                    cal.get(Calendar.MONTH),
+                    cal.get(Calendar.DAY_OF_MONTH)).show()
+        }
 
         val textViewV: TextView = findViewById(R.id.DtVencimento)
         textViewV.text = SimpleDateFormat("dd.MM.yyyy").format(System.currentTimeMillis())
     }
 
-    fun infdtpagamento (view: View) {
+    fun infdtpagamento1 (view: View) {
 
         val textView: TextView = findViewById(R.id.DtPagamento)
         //textView.text = SimpleDateFormat("dd.MM.yyyy").format(System.currentTimeMillis())
@@ -40,12 +59,12 @@ class MainCalculo : AppCompatActivity() {
 
         }
 
-      //  textView.setOnClickListener {
+       textView.setOnClickListener {
             DatePickerDialog(this@MainCalculo, dateSetListener,
                     cal.get(Calendar.YEAR),
                     cal.get(Calendar.MONTH),
                     cal.get(Calendar.DAY_OF_MONTH)).show()
-       // }
+        }
 
     }
 
