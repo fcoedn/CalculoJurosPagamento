@@ -3,11 +3,17 @@
 buildscript {
     ext.kotlin_version = '1.1.4-3'
     repositories {
-        google()
+       // https://dl.google.com/dl/android/maven2/com/android/tools/analytics-library/tracker/
+        //google()
+        //file:/home/francisco/android-studio/plugins/google-cloud-tools-core-as/lib/
         jcenter()
+        //mavenCentral()
+       maven { url 'https://maven.google.com' }
+       google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0-alpha07'
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        //classpath 'com.android.tools.build:gradle:3.1.0-alpha08'
         //classpath 'com.android.tools.build:gradle:3.1.0-alpha06'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
@@ -20,6 +26,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://maven.google.com' }
     }
 }
 
