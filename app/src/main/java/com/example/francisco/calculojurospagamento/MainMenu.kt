@@ -56,13 +56,27 @@ class MainMenu : AppCompatActivity()   {
         //val x: EditText = findViewById(R.id.edittext_name.)
         var codigo = this.edittext_userid.text.toString()
         var nome = this.edittext_name.text.toString()
-     //   var result = usersDBHelper.insertUser(UserModel(codigo = codigo,nome = nome))
+        var result = usersDBHelper.insertUser(UserModel(codigo = codigo,nome = nome))
         //clear all edittext s
-    //    this.edittext_name.setText("")
-     //   this.edittext_userid.setText("")
-     //   this.textview_result.text = "Added user : "+result
-     //   this.ll_entries.removeAllViews()
+         this.edittext_name.setText("")
+        this.edittext_userid.setText("")
+        this.textview_result.text = "Added user : "+result
+        this.ll_entries.removeAllViews()
     }
+
+
+    fun showAllUsers(v:View){
+        var users = usersDBHelper.readAllUsers()
+        this.ll_entries.removeAllViews()
+        users.forEach {
+            var tv_user = TextView(this)
+            tv_user.textSize = 30F
+            tv_user.text = it.codigo.toString() + " - " + it.nome.toString()
+            this.ll_entries.addView(tv_user)
+        }
+        this.textview_result.text = "Fetched " + users.size + " users"
+    }
+
     /**
      fun jurosCalcular (view: View) {
             val calculoIntent =  Intent(this, MainCalculo::class.java)
@@ -88,5 +102,6 @@ class MainMenu : AppCompatActivity()   {
 
     }
      */
+
 }
 
