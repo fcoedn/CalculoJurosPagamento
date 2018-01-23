@@ -3,6 +3,7 @@ package com.example.francisco.calculojurospagamento
 import android.content.Intent
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -26,6 +27,15 @@ class MainMenu : AppCompatActivity()   {
         val btnCalcular: Button = findViewById(R.id.btnCalcular)
         btnCalcular.text = "Calcular"
          btnCalcular.setOnClickListener {
+         //    var users = usersDBHelper.readUser("DTI20180122")
+         //    users.forEach {
+         //        var tv_user = TextView(this)
+         //        tv_user.textSize = 30F
+         //        tv_user.text = it.cd_chave.toString() + " - " + it.vl_taxa.toString()
+         //        this.ll_entries.addView(tv_user)
+         //    }
+         //    this.textview_result.text = "Fetched " + users.size + " users"
+
              val calculoIntent =  Intent(this, MainCalculo::class.java)
              startActivity(calculoIntent);
          }

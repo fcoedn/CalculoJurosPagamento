@@ -13,6 +13,7 @@ import java.util.ArrayList
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
+        db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180122',1.999)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -60,13 +61,13 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 
 */
 
-    /*
-    fun readUser(codigo: String): ArrayList<UserModel> {
+
+    fun readUser(cd_chave: String): ArrayList<UserModel> {
         val users = ArrayList<UserModel>()
         val db = writableDatabase
         var cursor: Cursor? = null
         try {
-            cursor = db.rawQuery("select * from " + DBContract.UserTabela.TABLE_NAME + " WHERE " + DBContract.UserTabela.COLUMN_CODIGO + "='" + codigo + "'", null)
+            cursor = db.rawQuery("select * from " + DBContract.UserTabela.TABLE_NAME + " WHERE " + DBContract.UserTabela.COLUMN_CHAVE + "='" + cd_chave + "'", null)
         } catch (e: SQLiteException) {
             // if table not yet present, create it
             db.execSQL(SQL_CREATE_ENTRIES)
@@ -74,21 +75,22 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         }
 
         //var codigo: String
-        var nome: String
+        var vl_taxa: Double
         //var age: String
         if (cursor!!.moveToFirst()) {
             while (cursor.isAfterLast == false) {
-                nome = cursor.getString(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_NOME))
+            //--    vl_taxa = cursor.getString(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
+                vl_taxa = cursor.getDouble(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
           //      age = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_AGE))
 
-                users.add(UserModel(codigo, nome))
+                users.add(UserModel(cd_chave, vl_taxa))
                 cursor.moveToNext()
             }
         }
         return users
     }
 
-*/
+
 
     /*
     fun readAllUsers(): ArrayList<UserModel> {

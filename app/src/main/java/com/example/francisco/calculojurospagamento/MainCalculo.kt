@@ -12,14 +12,19 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main_calculo.*
+import kotlinx.android.synthetic.main.activity_main_menu.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class MainCalculo : AppCompatActivity() {
 
+    lateinit var usersDBHelper : UsersDBHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_calculo)
+
+        usersDBHelper = UsersDBHelper(this)
 
         // Data Atual
         val DtPagamento: TextView = findViewById(R.id.DtPagamento)
@@ -73,11 +78,20 @@ class MainCalculo : AppCompatActivity() {
         btnCalcular.setOnClickListener {
             val vlraPagar: EditText = findViewById(R.id.VlrPagar)
             val a: String = vlraPagar.text.toString()
+            var b: Double
 
             if (a.isEmpty()) {
                Toast.makeText(applicationContext,"Valor Incorreto", Toast.LENGTH_SHORT).show()
             } else {
-                val b = a.toInt() * 2
+                    var users = usersDBHelper.readUser("DTI20180122")
+
+                    users.forEach {
+                        var tv_user = TextView(this)
+                        tv_user.text = it.cd_chave.toString() + " - " + it.vl_taxa.toString()
+                         b = a.toDouble() * it.vl_taxa
+                    }
+
+               // val b = a.toInt() * 2
                 //result.setText(e.toString())
 
                 //AlertDialog.Builder(this)
