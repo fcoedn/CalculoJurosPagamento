@@ -26,6 +26,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         onUpgrade(db, oldVersion, newVersion)
     }
 
+    /*
     @Throws(SQLiteConstraintException::class)
     fun insertUser(user: UserModel): Boolean {
         // Gets the data repository in write mode
@@ -57,6 +58,9 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return true
     }
 
+*/
+
+    /*
     fun readUser(codigo: String): ArrayList<UserModel> {
         val users = ArrayList<UserModel>()
         val db = writableDatabase
@@ -84,6 +88,9 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return users
     }
 
+*/
+
+    /*
     fun readAllUsers(): ArrayList<UserModel> {
         val users = ArrayList<UserModel>()
         val db = writableDatabase
@@ -111,15 +118,16 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return users
     }
 
+*/
     companion object {
         // If you change the database schema, you must increment the database version.
         val DATABASE_VERSION = 1
-        val DATABASE_NAME = "FCO.db"
+        val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =
                 "CREATE TABLE " + DBContract.UserTabela.TABLE_NAME + " (" +
-                        DBContract.UserTabela.COLUMN_CODIGO + " TEXT PRIMARY KEY," +
-                        DBContract.UserTabela.COLUMN_NOME + " TEXT)"
+                        DBContract.UserTabela.COLUMN_CHAVE + " TEXT PRIMARY KEY," +
+                        DBContract.UserTabela.COLUMN_TAXA + " DECIMAL(15,9))"
                         //DBContract.UserTabela.COLUMN_AGE + " TEXT)"
 
         private val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + DBContract.UserTabela.TABLE_NAME

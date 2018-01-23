@@ -5,9 +5,9 @@ import android.provider.BaseColumns
 object DBContract {
     class UserTabela : BaseColumns {
         companion object {
-            val TABLE_NAME = "fcodb"
-            val COLUMN_CODIGO = "codigo"
-            val COLUMN_NOME = "nome"
+            val TABLE_NAME = "JURATRASO"
+            val COLUMN_CHAVE = "cd_chave"
+            val COLUMN_TAXA = "vl_taxa"
         }
     }
 }

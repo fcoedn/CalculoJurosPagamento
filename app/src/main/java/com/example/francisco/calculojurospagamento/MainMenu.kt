@@ -12,6 +12,7 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
 
+
 class MainMenu : AppCompatActivity()   {
 
     lateinit var usersDBHelper : UsersDBHelper
@@ -30,10 +31,10 @@ class MainMenu : AppCompatActivity()   {
          }
 
         val btnNovoMes: Button = findViewById(R.id.btnNovoMes)
-       // btnNovoMes.setOnClickListener {
-        //    val novomesIntent =  Intent(this, MainNovoMes::class.java)
-        //    startActivity(novomesIntent);
-        // }
+        btnNovoMes.setOnClickListener {
+            val novomesIntent =  Intent(this, MainNovoMes::class.java)
+            startActivity(novomesIntent);
+         }
 
         val btnConfig: Button = findViewById(R.id.btnConfig)
         btnConfig.setOnClickListener {
@@ -52,6 +53,7 @@ class MainMenu : AppCompatActivity()   {
         // https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/index.html?index=..%2F..%2Findex#7
     }
 
+    /*
     fun addUser(v:View){
         //val x: EditText = findViewById(R.id.edittext_name.)
         var codigo = this.edittext_userid.text.toString()
@@ -64,7 +66,9 @@ class MainMenu : AppCompatActivity()   {
         this.ll_entries.removeAllViews()
     }
 
+*/
 
+    /*
     fun showAllUsers(v:View){
         var users = usersDBHelper.readAllUsers()
         this.ll_entries.removeAllViews()
@@ -76,8 +80,8 @@ class MainMenu : AppCompatActivity()   {
         }
         this.textview_result.text = "Fetched " + users.size + " users"
     }
+*/
 
-    /**
      fun jurosCalcular (view: View) {
             val calculoIntent =  Intent(this, MainCalculo::class.java)
             startActivity(calculoIntent);
@@ -101,7 +105,7 @@ class MainMenu : AppCompatActivity()   {
        finish()
 
     }
-     */
+
 
 }
 
