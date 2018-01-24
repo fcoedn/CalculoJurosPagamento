@@ -112,7 +112,7 @@ class MainCalculo : AppCompatActivity() {
 
                 AlertDialog.Builder(this)
                         .setTitle("Juros")
-                        .setMessage("Valor $b")
+                        .setMessage("Valor $vl_taxa_pagamento")
                         .setPositiveButton("Ok", { dialog, which -> }).show()
                // conts val FCO
                 val resultadoIntent =  Intent(this, MainResultado::class.java)
