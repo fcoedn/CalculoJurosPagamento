@@ -13,6 +13,9 @@ import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main_calculo.*
 import kotlinx.android.synthetic.main.activity_main_menu.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -83,15 +86,28 @@ class MainCalculo : AppCompatActivity() {
             if (a.isEmpty()) {
                Toast.makeText(applicationContext,"Valor Incorreto", Toast.LENGTH_SHORT).show()
             } else {
-                    var users = usersDBHelper.readUser("DTI20180122")
-
-                    users.forEach {
-                        var tv_user = TextView(this)
-                        tv_user.text = it.cd_chave.toString() + " - " + it.vl_taxa.toString()
-                        val c = a.toDouble() * it.vl_taxa
-                    }
-                val c: Double = usersDBHelper.readUser1("DTI20180122")
-                val b: Double = a.toInt() * c.toDouble()
+                    //var users = usersDBHelper.readUser("DTI20180122")
+                   val vl_taxa_vencimento: Double = usersDBHelper.readUser1("DTI20180101")
+                   val vl_taxa_pagamento: Double = usersDBHelper.readUser1("DTI20180124")
+                   // users.forEach {
+                   //     var tv_user = TextView(this)
+                   //     tv_user.text = it.cd_chave.toString() + " - " + it.vl_taxa.toString()
+                   //     val c = a.toDouble() * it.vl_taxa
+                   // }
+                val vl_temp1: Double = a.toDouble() / vl_taxa_vencimento.toDouble()
+                val vl_temp2: Double = vl_temp1 * vl_taxa_pagamento
+                // Multa
+                val vl_calcmulta: Double = vl_temp2 * (0.20 * 23) / 100
+                val vl_final1: Double = (vl_temp2 + vl_calcmulta) - a.toDouble()
+                val vl_final2: Double = vl_final1 * 100
+                val vl_final3:Int = vl_final2.toInt()
+                val vl_final4: Double = (vl_final3.toDouble() / 100) * 10
+                val df = DecimalFormat("###")
+                df.roundingMode = RoundingMode.CEILING
+                val vl_final5  = df.format(vl_final4)
+                val vl_final6: Double = (vl_final5.toDouble() / 10 ) * 100
+                val vl_final7: Double = vl_final6 / 100
+                val b: Double = vl_final7.toDouble()
                 //result.setText(e.toString())
 
                 AlertDialog.Builder(this)

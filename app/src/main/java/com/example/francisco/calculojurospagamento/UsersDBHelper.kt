@@ -13,7 +13,9 @@ import java.util.ArrayList
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
-        db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180122',1.999)")
+        db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180101', 12.488471211)")
+        db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180124',12.686321950)")
+        db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180125', 12.694994903)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -101,21 +103,22 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
             db.execSQL(SQL_CREATE_ENTRIES)
             return Double.MIN_VALUE
         }
-        vl_taxa = 5.0
+        //vl_taxa = 5.0
         //var codigo: String
-        //var vl_taxa: Double
+        var vl_taxa1: Double = 0.0
         //var age: String
         //vl_taxa = cursor.getDouble(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
-        //if (cursor!!.moveToFirst()) {
-        //    while (cursor.isAfterLast == false) {
-        //        //--    vl_taxa = cursor.getString(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
-        //        vl_taxa = cursor.getDouble(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
-        //        //      age = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_AGE))
+        if (cursor!!.moveToFirst()) {
+            while (cursor.isAfterLast == false) {
+                //--    vl_taxa = cursor.getString(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
+                vl_taxa1 = cursor.getDouble(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
+                //      age = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_AGE))
 
               //  users.add(UserModel(cd_chave, vl_taxa))
-         //       cursor.moveToNext()
-         //   }
-        //}
+                cursor.moveToNext()
+            }
+        }
+        vl_taxa = vl_taxa1
         return vl_taxa
     }
 
@@ -150,7 +153,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 */
     companion object {
         // If you change the database schema, you must increment the database version.
-        val DATABASE_VERSION = 1
+        val DATABASE_VERSION = 2
         val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =
