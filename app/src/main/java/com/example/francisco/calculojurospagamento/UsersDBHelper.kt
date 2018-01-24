@@ -90,7 +90,34 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return users
     }
 
+    fun readUser1(cd_chave: String): Double {
+        val vl_taxa:  Double
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery("select * from " + DBContract.UserTabela.TABLE_NAME + " WHERE " + DBContract.UserTabela.COLUMN_CHAVE + "='" + cd_chave + "'", null)
+        } catch (e: SQLiteException) {
+            // if table not yet present, create it
+            db.execSQL(SQL_CREATE_ENTRIES)
+            return Double.MIN_VALUE
+        }
+        vl_taxa = 5.0
+        //var codigo: String
+        //var vl_taxa: Double
+        //var age: String
+        //vl_taxa = cursor.getDouble(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
+        //if (cursor!!.moveToFirst()) {
+        //    while (cursor.isAfterLast == false) {
+        //        //--    vl_taxa = cursor.getString(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
+        //        vl_taxa = cursor.getDouble(cursor.getColumnIndex(DBContract.UserTabela.COLUMN_TAXA))
+        //        //      age = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_AGE))
 
+              //  users.add(UserModel(cd_chave, vl_taxa))
+         //       cursor.moveToNext()
+         //   }
+        //}
+        return vl_taxa
+    }
 
     /*
     fun readAllUsers(): ArrayList<UserModel> {

@@ -16,8 +16,15 @@ class MainResultado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_resultado)
 
-        val resultado = intent.getIntExtra(FCO,0)
-        txresulprest.text = Integer.toString(resultado)
+      //  val resultado = intent.getDoubleExtra(FCO,0)
+        val resultado = intent.getDoubleExtra(FCO,0.0)
+
+        AlertDialog.Builder(this)
+                .setTitle("Juros")
+                .setMessage("Valor $resultado")
+                .setPositiveButton("Ok", { dialog, which -> }).show()
+
+       // txresulprest.text = Double.toString(resultado)
         val btnSair: Button = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
             finish()

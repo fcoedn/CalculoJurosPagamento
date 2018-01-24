@@ -78,7 +78,7 @@ class MainCalculo : AppCompatActivity() {
         btnCalcular.setOnClickListener {
             val vlraPagar: EditText = findViewById(R.id.VlrPagar)
             val a: String = vlraPagar.text.toString()
-            var b: Double
+
 
             if (a.isEmpty()) {
                Toast.makeText(applicationContext,"Valor Incorreto", Toast.LENGTH_SHORT).show()
@@ -88,16 +88,16 @@ class MainCalculo : AppCompatActivity() {
                     users.forEach {
                         var tv_user = TextView(this)
                         tv_user.text = it.cd_chave.toString() + " - " + it.vl_taxa.toString()
-                         b = a.toDouble() * it.vl_taxa
+                        val c = a.toDouble() * it.vl_taxa
                     }
-
-               // val b = a.toInt() * 2
+                val c: Double = usersDBHelper.readUser1("DTI20180122")
+                val b: Double = a.toInt() * c.toDouble()
                 //result.setText(e.toString())
 
-                //AlertDialog.Builder(this)
-                //        .setTitle("Juros")
-                //        .setMessage("Valor $b")
-                //        .setPositiveButton("Ok", { dialog, which -> }).show()
+                AlertDialog.Builder(this)
+                        .setTitle("Juros")
+                        .setMessage("Valor $b")
+                        .setPositiveButton("Ok", { dialog, which -> }).show()
                // conts val FCO
                 val resultadoIntent =  Intent(this, MainResultado::class.java)
                 resultadoIntent.putExtra(MainResultado.FCO,b)
