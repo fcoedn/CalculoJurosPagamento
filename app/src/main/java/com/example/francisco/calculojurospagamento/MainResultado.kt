@@ -24,7 +24,8 @@ class MainResultado : AppCompatActivity() {
                 .setMessage("Valor $resultado")
                 .setPositiveButton("Ok", { dialog, which -> }).show()
 
-       // txresulprest.text = Double.toString(resultado)
+        //txresulprest.text = Integer.toString(resultado)
+        txresulprest.text = resultado.toString()
         val btnSair: Button = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
             finish()
