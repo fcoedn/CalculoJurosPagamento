@@ -14,6 +14,8 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180101', 12.488471211)")
+        db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180122', 12.668993815)")
+        db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180123', 12.677654922)")
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180124',12.686321950)")
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('DTI20180125', 12.694994903)")
     }
@@ -153,7 +155,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 */
     companion object {
         // If you change the database schema, you must increment the database version.
-        val DATABASE_VERSION = 2
+        val DATABASE_VERSION = 4
         val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =

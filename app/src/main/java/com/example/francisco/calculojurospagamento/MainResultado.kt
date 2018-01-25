@@ -9,7 +9,8 @@ import kotlinx.android.synthetic.main.activity_main_resultado.*
 class MainResultado : AppCompatActivity() {
   //  abstract const val FCO
   companion object {
-      const val FCO = "total_count"
+      const val FCO1 = "vlr prestacao"
+      const val FCO2 = "vlr juros"
   }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,18 +18,29 @@ class MainResultado : AppCompatActivity() {
         setContentView(R.layout.activity_main_resultado)
 
       //  val resultado = intent.getDoubleExtra(FCO,0)
-        val resultado = intent.getDoubleExtra(FCO,0.0)
+        val resultado1 = intent.getDoubleExtra(FCO1,0.0)
+        val resultado2 = intent.getDoubleExtra(FCO2,0.0)
 
-        AlertDialog.Builder(this)
-                .setTitle("Juros")
-                .setMessage("Valor $resultado")
-                .setPositiveButton("Ok", { dialog, which -> }).show()
+       // AlertDialog.Builder(this)
+       //         .setTitle("Juros")
+       //         .setMessage("Valor-A $resultado1")
+       //         .setPositiveButton("Ok", { dialog, which -> }).show()
+
+       // AlertDialog.Builder(this)
+       //         .setTitle("Juros")
+       //         .setMessage("Valor-B $resultado2")
+       //         .setPositiveButton("Ok", { dialog, which -> }).show()
 
         //txresulprest.text = Integer.toString(resultado)
-        txresulprest.text = resultado.toString()
-        val btnSair: Button = findViewById(R.id.btnSair)
+        txvlrprest.text        = resultado1.toString()
+        txvlrprest.textSize    = 25F
+        txvlrjurospre.text     = resultado2.toString()
+        txvlrjurospre.textSize = 25F
+        txtotalprest.text      = (resultado1 + resultado2).toString()
+        txtotalprest.textSize  = 30F
+        val btnSair: Button    = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
-            finish()
+           finish()
         }
     }
 }

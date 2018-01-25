@@ -110,13 +110,16 @@ class MainCalculo : AppCompatActivity() {
                 val b: Double = vl_final7.toDouble()
                 //result.setText(e.toString())
 
-                AlertDialog.Builder(this)
-                        .setTitle("Juros")
-                        .setMessage("Valor $vl_taxa_pagamento")
-                        .setPositiveButton("Ok", { dialog, which -> }).show()
+              //  AlertDialog.Builder(this)
+              //          .setTitle("Juros")
+              //          .setMessage("Valor $vl_taxa_pagamento")
+              //          .setPositiveButton("Ok", { dialog, which -> }).show()
+
                // conts val FCO
                 val resultadoIntent =  Intent(this, MainResultado::class.java)
-                resultadoIntent.putExtra(MainResultado.FCO,b)
+              //  resultadoIntent.putExtra(MainResultado.FCO,b)
+                resultadoIntent.putExtra(MainResultado.FCO1,a.toDouble())
+                resultadoIntent.putExtra(MainResultado.FCO2,b)
                 startActivity(resultadoIntent);
             }
         }
