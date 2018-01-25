@@ -31,13 +31,16 @@ class MainResultado : AppCompatActivity() {
        //         .setMessage("Valor-B $resultado2")
        //         .setPositiveButton("Ok", { dialog, which -> }).show()
 
-        //txresulprest.text = Integer.toString(resultado)
+        //Resultado Calculo Valor Prestação
         txvlrprest.text        = resultado1.toString()
         txvlrprest.textSize    = 25F
         txvlrjurospre.text     = resultado2.toString()
         txvlrjurospre.textSize = 25F
+     //   txvlrjurospre.textColors = "100"
         txtotalprest.text      = (resultado1 + resultado2).toString()
         txtotalprest.textSize  = 30F
+
+        //Resultao Calculo Valor PorConta
         val btnSair: Button    = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
            finish()
