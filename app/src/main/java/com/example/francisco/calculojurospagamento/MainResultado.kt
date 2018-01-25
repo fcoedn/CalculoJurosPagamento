@@ -11,6 +11,9 @@ class MainResultado : AppCompatActivity() {
   companion object {
       const val FCO1 = "vlr prestacao"
       const val FCO2 = "vlr juros"
+      const val FCO3 = "dias"
+      const val FCO4 = "vlr pc"
+      const val FCO5 = "juros pc"
   }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +23,9 @@ class MainResultado : AppCompatActivity() {
       //  val resultado = intent.getDoubleExtra(FCO,0)
         val resultado1 = intent.getDoubleExtra(FCO1,0.0)
         val resultado2 = intent.getDoubleExtra(FCO2,0.0)
+        val resultado3 = intent.getIntExtra(FCO3,0)
+        val resultado4 = intent.getDoubleExtra(FCO4,0.0)
+        val resultado5 = intent.getDoubleExtra(FCO5,0.0)
 
        // AlertDialog.Builder(this)
        //         .setTitle("Juros")
@@ -32,6 +38,8 @@ class MainResultado : AppCompatActivity() {
        //         .setPositiveButton("Ok", { dialog, which -> }).show()
 
         //Resultado Calculo Valor Prestação
+        txdias.text = resultado3.toString() + " Dia(s) do Vencimento"
+        txdias.textSize = 20F
         txvlrprest.text        = resultado1.toString()
         txvlrprest.textSize    = 25F
         txvlrjurospre.text     = resultado2.toString()
@@ -41,6 +49,11 @@ class MainResultado : AppCompatActivity() {
         txtotalprest.textSize  = 30F
 
         //Resultao Calculo Valor PorConta
+        txvlrpc.text       = resultado4.toString()
+        txvlrpc.textSize    = 25F
+        txvlrjurpc.text     = resultado5.toString()
+        txvlrjurpc.textSize = 25F
+        txtotpc.text = (resultado4 + resultado5).toString()
         val btnSair: Button    = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
            finish()

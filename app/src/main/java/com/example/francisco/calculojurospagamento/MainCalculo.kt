@@ -83,26 +83,41 @@ class MainCalculo : AppCompatActivity() {
             val vlraPagar: EditText = findViewById(R.id.VlrPagar)
             val a: String = vlraPagar.text.toString()
 
+            val DtVencimento1 = DtVencimento.text
+            val buscaVenc = "DTI" + DtVencimento1.substring(6,10) + DtVencimento1.substring(3,5) +
+                    DtVencimento1.substring(0,2)
+            val DtPagamento1 = DtPagamento.text
+            val buscaPagto = "DTI" + DtPagamento1.substring(6,10) + DtPagamento1.substring(3,5) +
+                    DtPagamento1.substring(0,2)
+
+            val myFrmDate = "dd.MM.yyyy"
+            val dfd = SimpleDateFormat(myFrmDate)
+            val dtPagar: Date = dfd.parse(DtPagamento1.toString())
+            val dtVenc: Date = dfd.parse(DtVencimento1.toString())
+
+            //val compResult1 = when {
+            //    date1 < date2 -> "BEFORE"
+            //    date1 > date2 -> "AFTER"
+            //    else -> "WITH"
+            //}
+            val numDias: Long = (dtPagar.time - dtVenc.time) / (24*60*60*1000)
 
             if (a.isEmpty()) {
-               Toast.makeText(applicationContext,"Valor Incorreto", Toast.LENGTH_SHORT).show()
-            } else {
+                Toast.makeText(applicationContext, "Valor Incorreto", Toast.LENGTH_SHORT).show()
+             }
+             else if (dtPagar <= dtVenc) {
+                   Toast.makeText(applicationContext,"Data Pagamento Incorreta", Toast.LENGTH_SHORT).show()
+             }
+             else {
+                 // AlertDialog.Builder(this)
+                 //         .setTitle("Juros")
+                 //         .setMessage("Valor ${numDias.toString()}")
+                 //         .setPositiveButton("Ok", { dialog, which -> }).show()
 
-                  val DtVencimento1 = DtVencimento.text
-                  val buscaVenc = "DTI" + DtVencimento1.substring(6,10) + DtVencimento1.substring(3,5) +
-                          DtVencimento1.substring(0,2)
-                  val DtPagamento1 = DtPagamento.text
-                  val buscaPagto = "DTI" + DtPagamento1.substring(6,10) + DtPagamento1.substring(3,5) +
-                        DtPagamento1.substring(0,2)
-
-                  //AlertDialog.Builder(this)
-                  //        .setTitle("Juros")
-                  //        .setMessage("Valor $buscaVenc")
-                  //        .setPositiveButton("Ok", { dialog, which -> }).show()
 
                 //var users = usersDBHelper.readUser("DTI20180122")
-                   val vl_taxa_vencimento: Double = usersDBHelper.readUser1(buscaVenc)
-                   val vl_taxa_pagamento: Double = usersDBHelper.readUser1(buscaPagto)
+                val vl_taxa_vencimento: Double = usersDBHelper.readUser1(buscaVenc)
+                val vl_taxa_pagamento: Double = usersDBHelper.readUser1(buscaPagto)
                    // users.forEach {
                    //     var tv_user = TextView(this)
                    //     tv_user.text = it.cd_chave.toString() + " - " + it.vl_taxa.toString()
@@ -111,7 +126,7 @@ class MainCalculo : AppCompatActivity() {
                 val vl_temp1: Double = a.toDouble() / vl_taxa_vencimento.toDouble()
                 val vl_temp2: Double = vl_temp1 * vl_taxa_pagamento
                 // Multa
-                val vl_calcmulta: Double = vl_temp2 * (0.20 * 23) / 100
+                val vl_calcmulta: Double = vl_temp2 * (0.20 * numDias) / 100
                 val vl_final1: Double = (vl_temp2 + vl_calcmulta) - a.toDouble()
                 val vl_final2: Double = vl_final1 * 100
                 val vl_final3:Int = vl_final2.toInt()
@@ -124,7 +139,20 @@ class MainCalculo : AppCompatActivity() {
                 val b: Double = vl_final7.toDouble()
                 //result.setText(e.toString())
 
-              //  AlertDialog.Builder(this)
+                // Calculo do Porcontas
+                val vl_pc1: Double = a.toDouble() * vl_taxa_vencimento
+                val vl_pc2: Double = vl_pc1 / vl_taxa_pagamento
+                val vl_pc3: Double = a.toDouble() - vl_pc2
+                val vl_diaspc: Double = ((numDias * (0.20 / 100)) + 1)
+                val vl_finalpc1: Double =  vl_pc2 / vl_diaspc
+                val vl_finalpc2: Double = (a.toDouble() - vl_finalpc1) - vl_pc3
+                val vl_finalpc3: Double = (vl_finalpc1 * vl_taxa_pagamento ) / vl_taxa_vencimento
+                val vl_finalpc4: Double = vl_finalpc3 * vl_diaspc
+                val vl_prespc: Double = vl_finalpc1
+                val vl_jurospc: Double = vl_pc3
+
+
+                //  AlertDialog.Builder(this)
               //          .setTitle("Juros")
               //          .setMessage("Valor $vl_taxa_pagamento")
               //          .setPositiveButton("Ok", { dialog, which -> }).show()
@@ -134,6 +162,9 @@ class MainCalculo : AppCompatActivity() {
               //  resultadoIntent.putExtra(MainResultado.FCO,b)
                 resultadoIntent.putExtra(MainResultado.FCO1,a.toDouble())
                 resultadoIntent.putExtra(MainResultado.FCO2,b)
+                resultadoIntent.putExtra(MainResultado.FCO3,numDias.toInt())
+                resultadoIntent.putExtra(MainResultado.FCO4,vl_prespc)
+                resultadoIntent.putExtra(MainResultado.FCO5,vl_jurospc)
                 startActivity(resultadoIntent);
             }
         }
