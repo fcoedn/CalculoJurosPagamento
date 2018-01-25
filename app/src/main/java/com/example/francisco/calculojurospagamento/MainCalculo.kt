@@ -149,7 +149,7 @@ class MainCalculo : AppCompatActivity() {
                 val vl_finalpc3: Double = (vl_finalpc1 * vl_taxa_pagamento ) / vl_taxa_vencimento
                 val vl_finalpc4: Double = vl_finalpc3 * vl_diaspc
                 val vl_prespc: Double = vl_finalpc1
-                val vl_jurospc: Double = vl_pc3
+                val vl_jurospc: Double = vl_pc3 + vl_final2
 
 
                 //  AlertDialog.Builder(this)
