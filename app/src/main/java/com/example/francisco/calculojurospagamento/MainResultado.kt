@@ -1,10 +1,12 @@
 package com.example.francisco.calculojurospagamento
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main_resultado.*
+import kotlinx.android.synthetic.main.activity_main_resultado.view.*
 
 class MainResultado : AppCompatActivity() {
   //  abstract const val FCO
@@ -42,11 +44,15 @@ class MainResultado : AppCompatActivity() {
         txdias.textSize = 20F
         txvlrprest.text        = resultado1.toString()
         txvlrprest.textSize    = 25F
+        txvlrprest.setTextColor(0xff000000.toInt())
+
         txvlrjurospre.text     = resultado2.toString()
         txvlrjurospre.textSize = 25F
-     //   txvlrjurospre.textColors = "100"
+        txvlrjurospre.setTextColor(0xff0000ff.toInt())
+
         txtotalprest.text      = (resultado1 + resultado2).toString()
         txtotalprest.textSize  = 30F
+        txtotalprest.setTextColor(0xff0000ff.toInt())
 
         //Resultao Calculo Valor PorConta
         txvlrpc.text       = resultado4.toString()
