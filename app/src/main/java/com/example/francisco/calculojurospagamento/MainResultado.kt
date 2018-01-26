@@ -7,6 +7,10 @@ import android.support.v7.app.AlertDialog
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main_resultado.*
 import kotlinx.android.synthetic.main.activity_main_resultado.view.*
+import java.math.BigDecimal
+import java.math.RoundingMode
+import java.text.DecimalFormat
+import java.text.NumberFormat
 
 class MainResultado : AppCompatActivity() {
   //  abstract const val FCO
@@ -40,17 +44,24 @@ class MainResultado : AppCompatActivity() {
        //         .setPositiveButton("Ok", { dialog, which -> }).show()
 
         //Resultado Calculo Valor Prestação
+
+        var valorpre = resultado1.toString()
+        valorpre = valorpre.replace(".",",")
+        var valorjurospre = resultado2.toString()
+        valorjurospre = valorjurospre.replace(".",",")
+        var valortotpre = (resultado1 + resultado2).toString()
+        valortotpre = valortotpre.replace(".",",")
+
         txdias.text = resultado3.toString() + " Dia(s) do Vencimento"
+
         txdias.textSize = 20F
-        txvlrprest.text        = resultado1.toString()
+        txvlrprest.text        = valorpre
         txvlrprest.textSize    = 25F
         txvlrprest.setTextColor(0xff000000.toInt())
-
-        txvlrjurospre.text     = resultado2.toString()
+        txvlrjurospre.text     = valorjurospre
         txvlrjurospre.textSize = 25F
         txvlrjurospre.setTextColor(0xff0000ff.toInt())
-
-        txtotalprest.text      = (resultado1 + resultado2).toString()
+        txtotalprest.text      = valortotpre
         txtotalprest.textSize  = 30F
         txtotalprest.setTextColor(0xff0000ff.toInt())
 
@@ -60,6 +71,7 @@ class MainResultado : AppCompatActivity() {
         txvlrjurpc.text     = resultado5.toString()
         txvlrjurpc.textSize = 25F
         txtotpc.text = (resultado4 + resultado5).toString()
+        txtotpc.textSize = 25F
         val btnSair: Button    = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
            finish()

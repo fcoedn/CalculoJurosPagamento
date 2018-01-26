@@ -84,10 +84,10 @@ class MainCalculo : AppCompatActivity() {
             val a: String = vlraPagar.text.toString()
 
             val DtVencimento1 = DtVencimento.text
-            val buscaVenc = "DTI" + DtVencimento1.substring(6,10) + DtVencimento1.substring(3,5) +
+            val buscaVenc = "GP2" + DtVencimento1.substring(6,10) + DtVencimento1.substring(3,5) +
                     DtVencimento1.substring(0,2)
             val DtPagamento1 = DtPagamento.text
-            val buscaPagto = "DTI" + DtPagamento1.substring(6,10) + DtPagamento1.substring(3,5) +
+            val buscaPagto = "GP2" + DtPagamento1.substring(6,10) + DtPagamento1.substring(3,5) +
                     DtPagamento1.substring(0,2)
 
             val myFrmDate = "dd.MM.yyyy"
@@ -100,8 +100,9 @@ class MainCalculo : AppCompatActivity() {
             //    date1 > date2 -> "AFTER"
             //    else -> "WITH"
             //}
-            val numDias: Long = (dtPagar.time - dtVenc.time) / (24*60*60*1000)
-
+            var numDias: Long = (dtPagar.time - dtVenc.time) / (24*60*60*1000)
+            var numDiasC = when {numDias > 150 -> 150
+                            else -> numDias}
             if (a.isEmpty()) {
                 Toast.makeText(applicationContext, "Valor Incorreto", Toast.LENGTH_SHORT).show()
              }
@@ -126,7 +127,7 @@ class MainCalculo : AppCompatActivity() {
                 val vl_temp1: Double = a.toDouble() / vl_taxa_vencimento.toDouble()
                 val vl_temp2: Double = vl_temp1 * vl_taxa_pagamento
                 // Multa
-                val vl_calcmulta: Double = vl_temp2 * (0.20 * numDias) / 100
+                val vl_calcmulta: Double = vl_temp2 * (0.20 * numDiasC) / 100
                 val vl_final1: Double = (vl_temp2 + vl_calcmulta) - a.toDouble()
                 val vl_final2: Double = vl_final1 * 100
                 val vl_final3:Int = vl_final2.toInt()
@@ -148,8 +149,20 @@ class MainCalculo : AppCompatActivity() {
                 val vl_finalpc2: Double = (a.toDouble() - vl_finalpc1) - vl_pc3
                 val vl_finalpc3: Double = (vl_finalpc1 * vl_taxa_pagamento ) / vl_taxa_vencimento
                 val vl_finalpc4: Double = vl_finalpc3 * vl_diaspc
-                val vl_prespc: Double = vl_finalpc1
-                val vl_jurospc: Double = vl_pc3 + vl_final2
+
+                var vl_finalpc5 = vl_finalpc1 * 1000
+                var vl_finalpc6: Int = vl_finalpc5.toInt()
+                var vl_finalpc10: Double = (vl_finalpc6.toDouble() / 1000)
+                // val vl_finalpc7: Double = (vl_finalpc6.toDouble() / 100) * 10
+                //val vl_finalpc8 = df.format(vl_finalpc7)
+                //val vl_finalpc9: Double = (vl_finalpc8.toDouble() / 10) * 100
+                //val vl_finalpc10: Double = vl_finalpc9 / 100
+                val vl_prespc: Double = vl_finalpc10
+
+                vl_finalpc5 = (a.toDouble() - vl_prespc) * 1000
+                vl_finalpc6 = vl_finalpc5.toInt()
+                vl_finalpc10 = (vl_finalpc6.toDouble() / 1000)
+                val vl_jurospc: Double = vl_finalpc10
 
 
                 //  AlertDialog.Builder(this)

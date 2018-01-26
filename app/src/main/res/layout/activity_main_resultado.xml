@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="Prestação"
+        android:textSize="18sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -19,10 +20,11 @@
         android:id="@+id/lbjurosprest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:text="Juros"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/lbPrestacao"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="32dp" />
 
     <TextView
         android:id="@+id/lbTotalPre"
@@ -30,6 +32,7 @@
         android:layout_height="28dp"
         android:layout_marginTop="44dp"
         android:text="Total"
+        android:textSize="18sp"
         app:layout_constraintTop_toTopOf="@+id/lbjurosprest"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -37,8 +40,9 @@
         android:id="@+id/lbPorConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="48dp"
         android:text="PorConta"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/lbTotalPre"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -46,19 +50,21 @@
         android:id="@+id/lbJurosPc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:text="Juros"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/lbPorConta"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="32dp" />
 
     <TextView
         android:id="@+id/lbTotalPc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:text="Total"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/lbJurosPc"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="25dp" />
 
     <Button
         android:id="@+id/btnNovoCal"
@@ -119,14 +125,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/txvlrprest"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="147dp" />
+        tools:layout_editor_absoluteX="153dp" />
 
     <TextView
         android:id="@+id/txvlrpc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="44dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/lbPorConta"
         app:layout_constraintTop_toBottomOf="@+id/txtotalprest" />
@@ -145,8 +151,8 @@
         android:id="@+id/txtotpc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="32dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/lbTotalPc"
         app:layout_constraintTop_toBottomOf="@+id/txvlrjurpc" />
