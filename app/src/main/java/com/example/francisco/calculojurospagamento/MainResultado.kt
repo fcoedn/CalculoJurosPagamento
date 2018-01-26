@@ -66,11 +66,17 @@ class MainResultado : AppCompatActivity() {
         txtotalprest.setTextColor(0xff0000ff.toInt())
 
         //Resultao Calculo Valor PorConta
-        txvlrpc.text       = resultado4.toString()
+        var valorpc = resultado4.toString()
+        valorpc =  valorpc.replace(".",",")
+        txvlrpc.text       = valorpc
         txvlrpc.textSize    = 25F
-        txvlrjurpc.text     = resultado5.toString()
+        var valorjupc = resultado5.toString()
+        valorjupc =  valorjupc.replace(".",",")
+        txvlrjurpc.text     = valorjupc
         txvlrjurpc.textSize = 25F
-        txtotpc.text = (resultado4 + resultado5).toString()
+        var valortotpc = (resultado4 + resultado5).toString()
+        valortotpc = valortotpc.replace(".",",")
+        txtotpc.text = valortotpc
         txtotpc.textSize = 25F
         val btnSair: Button    = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
