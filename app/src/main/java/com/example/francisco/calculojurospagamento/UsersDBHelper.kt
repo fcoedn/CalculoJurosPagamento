@@ -7,12 +7,14 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.database.Cursor
 import android.database.sqlite.SQLiteException
+import junit.framework.Assert
 
 import java.util.ArrayList
 
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
+
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220170101',      9.465485330)")
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220170102',      9.473624313)")
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220170103',      9.481770294)")
@@ -560,7 +562,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 */
     companion object {
         // If you change the database schema, you must increment the database version.
-        val DATABASE_VERSION = 9
+        val DATABASE_VERSION = 10
         val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =
