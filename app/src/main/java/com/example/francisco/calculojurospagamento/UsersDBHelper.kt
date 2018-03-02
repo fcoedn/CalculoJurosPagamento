@@ -1,17 +1,22 @@
 package com.example.francisco.calculojurospagamento
 
-import android.content.ContentValues
+import android.annotation.SuppressLint
 import android.content.Context
-import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.database.Cursor
 import android.database.sqlite.SQLiteException
-import junit.framework.Assert
+import android.util.Log
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 import java.util.ArrayList
 
+
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
+
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
 
@@ -431,7 +436,11 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
       //   This database is only a cache for online data, so its upgrade policy is
       //   to simply to discard the data and start over
         db.execSQL(SQL_DELETE_ENTRIES)
-         onCreate(db)
+
+
+        Log.d("#DB","Nascimento Filho>>"); //will show you database entries in Logcat.
+
+                onCreate(db)
     }
 
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -474,6 +483,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 
 
     fun readUser(cd_chave: String): ArrayList<UserModel> {
+        //getAssets().open("wordsData.txt")
         val users = ArrayList<UserModel>()
         val db = writableDatabase
         var cursor: Cursor? = null
@@ -562,7 +572,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 */
     companion object {
         // If you change the database schema, you must increment the database version.
-        val DATABASE_VERSION = 10
+        val DATABASE_VERSION = 12
         val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =
