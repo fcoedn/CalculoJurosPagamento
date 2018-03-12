@@ -19,7 +19,8 @@
         <activity android:name=".MainCalculo" />
         <activity android:name=".MainConfig" />
         <activity android:name=".MainNovoMes" />
-        <activity android:name=".MainResultado"></activity>
+        <activity android:name=".MainResultado" />
+        <activity android:name=".MainActivity2"></activity>
     </application>
 
 </manifest>

@@ -4,156 +4,252 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainResultado">
+    tools:context=".MainResultado"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/lbPrestacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_width="119dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="52dp"
         android:text="Prestação"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <TextView
-        android:id="@+id/lbjurosprest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Juros"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/lbPrestacao"
-        tools:layout_editor_absoluteX="32dp" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/lbTotalPre"
-        android:layout_width="74dp"
+        android:layout_width="119dp"
         android:layout_height="28dp"
-        android:layout_marginTop="44dp"
-        android:text="Total"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="T O T AL"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@+id/lbjurosprest"
-        tools:layout_editor_absoluteX="16dp" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/guideline31"
+        app:layout_constraintTop_toBottomOf="@+id/guideline24" />
 
     <TextView
         android:id="@+id/lbPorConta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="119dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
         android:text="PorConta"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/lbTotalPre"
-        tools:layout_editor_absoluteX="16dp" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline26"
+        app:layout_constraintStart_toEndOf="@+id/guideline31"
+        app:layout_constraintTop_toBottomOf="@+id/guideline25" />
 
     <TextView
         android:id="@+id/lbJurosPc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="119dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="7dp"
         android:text="Juros"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/lbPorConta"
-        tools:layout_editor_absoluteX="32dp" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/guideline31"
+        app:layout_constraintTop_toBottomOf="@+id/guideline26" />
 
     <TextView
         android:id="@+id/lbTotalPc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Total"
+        android:layout_width="119dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:text="T O T A L"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/lbJurosPc"
-        tools:layout_editor_absoluteX="25dp" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/guideline31"
+        app:layout_constraintTop_toBottomOf="@+id/guideline27" />
 
     <Button
         android:id="@+id/btnNovoCal"
-        android:layout_width="wrap_content"
+        android:layout_width="126dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="444dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="53dp"
         android:text="Novo Cálculo"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="67dp" />
+        app:layout_constraintStart_toEndOf="@+id/guideline31"
+        app:layout_constraintTop_toBottomOf="@+id/guideline28" />
 
     <Button
         android:id="@+id/btnSair"
-        android:layout_width="wrap_content"
+        android:layout_width="126dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="444dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
         android:text="Sair"
-        app:layout_constraintStart_toEndOf="@+id/btnNovoCal"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/guideline29"
+        app:layout_constraintTop_toBottomOf="@+id/guideline28" />
 
     <TextView
         android:id="@+id/txvlrprest"
-        android:layout_width="wrap_content"
+        android:layout_width="85dp"
         android:layout_height="29dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginEnd="1dp"
         android:text="VlrPrest"
-        app:layout_constraintStart_toEndOf="@+id/lbPrestacao"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/lbPrestacao"
+        app:layout_constraintEnd_toStartOf="@+id/guideline30"
+        app:layout_constraintTop_toTopOf="@+id/lbPrestacao" />
 
     <TextView
         android:id="@+id/txvlrjurospre"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="85dp"
+        android:layout_height="29dp"
         android:text="JurosPrest"
-        app:layout_constraintStart_toEndOf="@+id/lbjurosprest"
-        app:layout_constraintTop_toBottomOf="@+id/txvlrprest" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/lbJurosPre"
+        app:layout_constraintEnd_toStartOf="@+id/guideline30"
+        app:layout_constraintTop_toTopOf="@+id/lbJurosPre"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtotalprest"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="85dp"
+        android:layout_height="29dp"
         android:text="Total Pre"
-        app:layout_constraintStart_toEndOf="@+id/lbTotalPre"
-        app:layout_constraintTop_toBottomOf="@+id/txvlrjurospre" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/lbTotalPre"
+        app:layout_constraintEnd_toStartOf="@+id/guideline30"
+        app:layout_constraintTop_toTopOf="@+id/lbTotalPre"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txdias"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/txvlrprest"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="153dp" />
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/txvlrpc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="85dp"
+        android:layout_height="29dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/lbPorConta"
-        app:layout_constraintTop_toBottomOf="@+id/txtotalprest" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/lbPorConta"
+        app:layout_constraintEnd_toStartOf="@+id/guideline30"
+        app:layout_constraintTop_toTopOf="@+id/lbPorConta"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txvlrjurpc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="85dp"
+        android:layout_height="29dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/lbJurosPc"
-        app:layout_constraintTop_toBottomOf="@+id/txvlrpc" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/lbJurosPc"
+        app:layout_constraintEnd_toStartOf="@+id/guideline30"
+        app:layout_constraintTop_toTopOf="@+id/lbJurosPc"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtotpc"
+        android:layout_width="85dp"
+        android:layout_height="29dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/lbTotalPc"
+        app:layout_constraintEnd_toStartOf="@+id/guideline30"
+        app:layout_constraintTop_toTopOf="@+id/lbTotalPc"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="32dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/lbTotalPc"
-        app:layout_constraintTop_toBottomOf="@+id/txvlrjurpc" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="53dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="91dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="157dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="211dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="278dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="327dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="386dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="158dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="311dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="376dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="496dp" />
+
+    <TextView
+        android:id="@+id/lbJurosPre"
+        android:layout_width="119dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:text="Juros"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/guideline31"
+        app:layout_constraintTop_toBottomOf="@+id/guideline23" />
+
 </android.support.constraint.ConstraintLayout>
