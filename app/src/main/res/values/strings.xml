@@ -7,4 +7,5 @@
     <string name="TxDtPagamento">Pagamento</string>
     <string name="TxDtVencimento">Vencimento</string>
     <string name="TxVlrPagar">Valor a Pagar</string>
+    <string name="presta_o">Prestação</string>
 </resources>
