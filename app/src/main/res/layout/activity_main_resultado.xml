@@ -13,7 +13,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="52dp"
-        android:text="Prestação"
+        android:text="@string/presta_o"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/guideline31"

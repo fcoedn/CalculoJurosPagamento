@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
+import android.webkit.WebView
 import android.widget.EditText
 import android.widget.Button
 import android.widget.TextView
@@ -18,9 +20,19 @@ class MainMenu : AppCompatActivity()   {
 
     lateinit var usersDBHelper : UsersDBHelper
 
+    lateinit var FCO: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
+
+        Log.d("#csv","Nascimento Filho>>");
+        FCO = applicationContext.assets.open("francisco/juratraso.csv").bufferedReader().use {
+            it.readText()
+        }
+        Log.d("#csv","Inicio>>");
+        //println(FCO)
+        Log.d("#csv","Final>>");
 
         usersDBHelper = UsersDBHelper(this)
 

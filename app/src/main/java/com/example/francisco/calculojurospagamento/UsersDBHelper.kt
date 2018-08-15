@@ -1,17 +1,21 @@
 package com.example.francisco.calculojurospagamento
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.res.AssetManager
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.database.Cursor
 import android.database.sqlite.SQLiteException
 import android.util.Log
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
+import android.webkit.WebView
+
 
 import java.util.ArrayList
+
+import java.io.*
+import java.nio.charset.Charset
 
 
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -424,6 +428,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180130',     12.738448689)")
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180131',     12.747157278)")
 
+        println()
 
         //  db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180101', 12.488471211)")
       //  db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180122', 12.668993815)")
@@ -431,6 +436,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
       //  db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180124',12.686321950)")
      //   db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180125', 12.694994903)")
     }
+
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
       //   This database is only a cache for online data, so its upgrade policy is
