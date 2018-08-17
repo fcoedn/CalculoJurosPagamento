@@ -19,7 +19,7 @@ import java.nio.charset.Charset
 
 
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
+    var fileReader: BufferedReader? = null
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
@@ -428,7 +428,12 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180130',     12.738448689)")
         db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180131',     12.747157278)")
 
-        println()
+        Log.d("#csv","Banco 1>>");
+
+        //fileReader = BufferedReader(FileReader("francisco/juratraso.csv"))
+        //var arq = FileReader("francisco/juratraso.csv")
+        //println(arq)
+        Log.d("#csv","Banco 2>>");
 
         //  db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180101', 12.488471211)")
       //  db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('GP220180122', 12.668993815)")
@@ -547,6 +552,21 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         return vl_taxa
     }
 
+    fun atualizatabela(FCO: String) {
+        //println(FCO)
+        Log.d("#csv","OK Filho>>");
+        val lines: List<String> = FCO.split("|").map { it.trim() }
+        //FCO.toCharArray()
+        //lines.forEach { println(it) }
+        val result = FCO.removeSurrounding("|").split("|").map { it.toString() }
+        //println(result)
+        for (e in result) {
+            println("A")
+            println(e)
+        }
+
+        Log.d("#csv","OK OKOKOK>>");
+    }
     /*
     fun readAllUsers(): ArrayList<UserModel> {
         val users = ArrayList<UserModel>()
@@ -578,7 +598,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 */
     companion object {
         // If you change the database schema, you must increment the database version.
-        val DATABASE_VERSION = 12
+        val DATABASE_VERSION = 17
         val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =
