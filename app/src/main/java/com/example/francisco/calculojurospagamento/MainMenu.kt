@@ -12,6 +12,7 @@ import android.webkit.WebView
 import android.widget.EditText
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
 
@@ -33,7 +34,12 @@ class MainMenu : AppCompatActivity()   {
         //Log.d("#csv","Final>>");
 
         usersDBHelper = UsersDBHelper(this)
-        usersDBHelper.atualizatabela(juroscsv)
+        Toast.makeText(applicationContext,"Atualizando Base de Dados", Toast.LENGTH_SHORT).show()
+        AlertDialog.Builder(this)
+                .setTitle("Notification")
+                .setMessage("Atualizando")
+                .setPositiveButton("Ok", { dialog, which -> }).show()
+        //usersDBHelper.atualizatabela(juroscsv)
 
         val btnCalcular: Button = findViewById(R.id.btnCalcular)
         btnCalcular.text = "Calcular"
@@ -48,6 +54,8 @@ class MainMenu : AppCompatActivity()   {
          //    this.textview_result.text = "Fetched " + users.size + " users"
 
              val calculoIntent =  Intent(this, MainCalculo::class.java)
+             Toast.makeText(applicationContext,"Atualizando Base de Dados", 10).show()
+             usersDBHelper.atualizatabela(juroscsv)
              startActivity(calculoIntent);
          }
 
