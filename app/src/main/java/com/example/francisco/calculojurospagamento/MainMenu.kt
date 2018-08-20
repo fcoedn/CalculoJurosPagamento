@@ -20,22 +20,20 @@ class MainMenu : AppCompatActivity()   {
 
     lateinit var usersDBHelper : UsersDBHelper
 
-    //lateinit var FCO: String
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
         Log.d("#csv","Nascimento Filho>>");
-        var FCO: String = applicationContext.assets.open("francisco/juratraso.csv").bufferedReader().use {
-            it.readText()
+        var juroscsv: List<String> = applicationContext.assets.open("francisco/juratraso.csv").bufferedReader().use {
+            it.readLines()
         }
         //Log.d("#csv","Inicio>>");
         //println(FCO)
         //Log.d("#csv","Final>>");
 
         usersDBHelper = UsersDBHelper(this)
-        usersDBHelper.atualizatabela(FCO)
+        usersDBHelper.atualizatabela(juroscsv)
 
         val btnCalcular: Button = findViewById(R.id.btnCalcular)
         btnCalcular.text = "Calcular"
