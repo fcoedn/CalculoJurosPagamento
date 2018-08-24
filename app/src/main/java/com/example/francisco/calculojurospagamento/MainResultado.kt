@@ -62,7 +62,7 @@ class MainResultado : AppCompatActivity() {
         txvlrjurospre.textSize = 25F
         txvlrjurospre.setTextColor(0xff0000ff.toInt())
         txtotalprest.text      = valortotpre
-        txtotalprest.textSize  = 30F
+        txtotalprest.textSize  = 27F
         txtotalprest.setTextColor(0xff0000ff.toInt())
 
         //Resultao Calculo Valor PorConta
@@ -77,7 +77,8 @@ class MainResultado : AppCompatActivity() {
         var valortotpc = (resultado4 + resultado5).toString()
         valortotpc = valortotpc.replace(".",",")
         txtotpc.text = valortotpc
-        txtotpc.textSize = 25F
+        txtotpc.textSize = 27F
+
         val btnSair: Button    = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
            finish()

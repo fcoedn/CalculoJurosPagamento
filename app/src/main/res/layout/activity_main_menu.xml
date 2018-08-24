@@ -123,4 +123,13 @@
         app:layout_constraintTop_toTopOf="@+id/guideline7"
         app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/tx_mensagem"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        tools:layout_editor_absoluteY="448dp" />
+
 </android.support.constraint.ConstraintLayout>

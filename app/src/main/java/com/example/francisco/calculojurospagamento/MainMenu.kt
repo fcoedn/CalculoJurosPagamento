@@ -25,24 +25,28 @@ class MainMenu : AppCompatActivity()   {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        Log.d("#csv","Nascimento Filho>>");
-        var juroscsv: List<String> = applicationContext.assets.open("francisco/juratraso.csv").bufferedReader().use {
-            it.readLines()
-        }
+        //Log.d("#csv","Nascimento Filho>>");
+        //var juroscsv: List<String> = applicationContext.assets.open("francisco/juratraso.csv").bufferedReader().use {
+        //    it.readLines()
+        //}
+
         //Log.d("#csv","Inicio>>");
         //println(FCO)
         //Log.d("#csv","Final>>");
 
         usersDBHelper = UsersDBHelper(this)
-        Toast.makeText(applicationContext,"Atualizando Base de Dados", Toast.LENGTH_SHORT).show()
-        AlertDialog.Builder(this)
-                .setTitle("Notification")
-                .setMessage("Atualizando")
-                .setPositiveButton("Ok", { dialog, which -> }).show()
+        //Toast.makeText(applicationContext,"Atualizando Base de Dados", Toast.LENGTH_SHORT).show()
+        //AlertDialog.Builder(this)
+        //        .setTitle("Notification")
+        //        .setMessage("Atualizando")
+        //        .setPositiveButton("Ok", { dialog, which -> }).show()
+        //tx_mensagem.text = "Atualizando"
         //usersDBHelper.atualizatabela(juroscsv)
+        //tx_mensagem.text = "Atualizado Sucesso"
 
         val btnCalcular: Button = findViewById(R.id.btnCalcular)
         btnCalcular.text = "Calcular"
+        tx_mensagem.setText("Atualizando -1")
          btnCalcular.setOnClickListener {
          //    var users = usersDBHelper.readUser("DTI20180122")
          //    users.forEach {
@@ -53,15 +57,15 @@ class MainMenu : AppCompatActivity()   {
          //    }
          //    this.textview_result.text = "Fetched " + users.size + " users"
 
-             val calculoIntent =  Intent(this, MainCalculo::class.java)
-             Toast.makeText(applicationContext,"Atualizando Base de Dados", 10).show()
-             usersDBHelper.atualizatabela(juroscsv)
-             startActivity(calculoIntent);
+           val calculoIntent =  Intent(this, MainCalculo::class.java)
+              //setContentView(R.layout.activity_main_menu)
+              startActivity(calculoIntent);
          }
 
         val btnNovoMes: Button = findViewById(R.id.btnNovoMes)
         btnNovoMes.setOnClickListener {
             val novomesIntent =  Intent(this, MainNovoMes::class.java)
+            //usersDBHelper.atualizatabela(juroscsv)
             startActivity(novomesIntent);
          }
 
@@ -73,10 +77,10 @@ class MainMenu : AppCompatActivity()   {
 
         val btnSair: Button = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
-            AlertDialog.Builder(this)
-                    .setTitle("Notification")
-                    .setMessage("Finalizando")
-                    .setPositiveButton("Ok", { dialog, which -> }).show()
+            //AlertDialog.Builder(this)
+            //        .setTitle("Notification")
+            //        .setMessage("Finalizando")
+            //        .setPositiveButton("Ok", { dialog, which -> }).show()
             finish()
         }
         // https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/index.html?index=..%2F..%2Findex#7
@@ -111,10 +115,10 @@ class MainMenu : AppCompatActivity()   {
     }
 */
 
-     fun jurosCalcular (view: View) {
-            val calculoIntent =  Intent(this, MainCalculo::class.java)
-            startActivity(calculoIntent);
-      }
+  //   fun jurosCalcular (view: View) {
+  //          val calculoIntent =  Intent(this, MainCalculo::class.java)
+  //          startActivity(calculoIntent);
+  //    }
 
     fun jurosNovoMes (view: View) {
         val novomesIntent =  Intent(this, MainNovoMes::class.java)

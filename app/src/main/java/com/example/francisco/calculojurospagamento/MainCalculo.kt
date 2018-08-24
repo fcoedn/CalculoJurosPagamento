@@ -181,6 +181,11 @@ class MainCalculo : AppCompatActivity() {
                 startActivity(resultadoIntent);
             }
         }
+
+        val CSair: Button    = findViewById(R.id.CSair)
+        CSair.setOnClickListener {
+            finish()
+        }
     }
 
     // Antes chamado pelo activity_main_calculo.xml

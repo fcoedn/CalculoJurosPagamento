@@ -14,10 +14,10 @@ import android.webkit.WebView
 import android.widget.Toast
 
 
-import java.util.ArrayList
-
 import java.io.*
 import java.nio.charset.Charset
+import java.util.*
+import kotlin.concurrent.timerTask
 
 
 class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -147,8 +147,12 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         //println(juroscsv)
         val db = writableDatabase
         Log.d("#csv","OK Filho>>");
-
-
+        //var loop = 0
+        //while (loop < 1000    ) {
+        //    Log.d("#csv", loop.toString())
+        //    loop = loop + 1
+        //}
+        db.execSQL("DELETE FROM juratraso")
         for (linha in juroscsv) {
             var dados = linha.split("|")
             db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('"+dados[0]+"',"+dados[1]+")")
@@ -187,7 +191,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 */
     companion object {
         // If you change the database schema, you must increment the database version.
-        val DATABASE_VERSION = 6
+        val DATABASE_VERSION = 8
         val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =
