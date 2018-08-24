@@ -157,18 +157,26 @@ class MainCalculo : AppCompatActivity() {
                 //val vl_finalpc8 = df.format(vl_finalpc7)
                 //val vl_finalpc9: Double = (vl_finalpc8.toDouble() / 10) * 100
                 //val vl_finalpc10: Double = vl_finalpc9 / 100
-                val vl_prespc: Double = vl_finalpc10
+                var vl_prespc: Double = vl_finalpc10.toDouble()
 
-                vl_finalpc5 = (a.toDouble() - vl_prespc) * 1000
+                //val vl_final4: Double = (vl_final3.toDouble() / 100) * 10
+                // Arredonda
+
+                val df1 = DecimalFormat("#.##")
+                df1.roundingMode = RoundingMode.CEILING
+                var vl_prespc1 = df1.format(vl_prespc)
+
+
+                vl_finalpc5 = (a.toDouble() - vl_prespc1.toDouble()) * 1000
                 vl_finalpc6 = vl_finalpc5.toInt()
                 vl_finalpc10 = (vl_finalpc6.toDouble() / 1000)
                 val vl_jurospc: Double = vl_finalpc10
 
 
                 //  AlertDialog.Builder(this)
-              //          .setTitle("Juros")
-              //          .setMessage("Valor $vl_taxa_pagamento")
-              //          .setPositiveButton("Ok", { dialog, which -> }).show()
+                //        .setTitle("Juros")
+                //        .setMessage("Valor $vl_prespc1")
+                //        .setPositiveButton("Ok", { dialog, which -> }).show()
 
                // conts val FCO
                 val resultadoIntent =  Intent(this, MainResultado::class.java)
@@ -176,7 +184,7 @@ class MainCalculo : AppCompatActivity() {
                 resultadoIntent.putExtra(MainResultado.FCO1,a.toDouble())
                 resultadoIntent.putExtra(MainResultado.FCO2,b)
                 resultadoIntent.putExtra(MainResultado.FCO3,numDias.toInt())
-                resultadoIntent.putExtra(MainResultado.FCO4,vl_prespc)
+                resultadoIntent.putExtra(MainResultado.FCO4,vl_prespc1.toDouble())
                 resultadoIntent.putExtra(MainResultado.FCO5,vl_jurospc)
                 startActivity(resultadoIntent);
             }
