@@ -46,7 +46,7 @@ class MainMenu : AppCompatActivity()   {
 
         val btnCalcular: Button = findViewById(R.id.btnCalcular)
         btnCalcular.text = "Calcular"
-        tx_mensagem.setText("Atualizando -1")
+        //tx_mensagem.setText("Atualizando -1")
          btnCalcular.setOnClickListener {
          //    var users = usersDBHelper.readUser("DTI20180122")
          //    users.forEach {
