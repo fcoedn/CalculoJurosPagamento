@@ -1,19 +1,19 @@
 package com.example.francisco.calculojurospagamento
 
 import android.content.Intent
-import android.database.sqlite.SQLiteOpenHelper
+//import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
-import android.support.v4.content.ContextCompat.startActivity
+//import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
+//import android.util.Log
 import android.view.View
-import android.webkit.WebView
-import android.widget.EditText
+//import android.webkit.WebView
+//import android.widget.EditText
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main_menu.*
+//import android.widget.TextView
+//import android.widget.Toast
+//import kotlinx.android.synthetic.main.activity_main_menu.*
 
 
 

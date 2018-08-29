@@ -40,7 +40,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         db.execSQL(SQL_DELETE_ENTRIES)
 
 
-        Log.d("#DB","Nascimento Filho>>"); //will show you database entries in Logcat.
+        //Log.d("#DB","Nascimento Filho>>"); //will show you database entries in Logcat.
 
                 onCreate(db)
     }
@@ -146,7 +146,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
     fun atualizatabela(juroscsv: List<String>) {
         //println(juroscsv)
         val db = writableDatabase
-        Log.d("#csv","OK Filho>>");
+        //Log.d("#csv","OK Filho>>");
         //var loop = 0
         //while (loop < 1000    ) {
         //    Log.d("#csv", loop.toString())
@@ -158,7 +158,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
             db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('"+dados[0]+"',"+dados[1]+")")
         }
 
-        Log.d("#csv","OK OKOKOK>>");
+       // Log.d("#csv","OK OKOKOK>>");
     }
     /*
     fun readAllUsers(): ArrayList<UserModel> {

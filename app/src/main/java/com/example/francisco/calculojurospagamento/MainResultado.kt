@@ -1,15 +1,17 @@
 package com.example.francisco.calculojurospagamento
 
-import android.graphics.Color
+//import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.widget.Button
+import java.util.*
+import android.support.v7.app.AlertDialog
+//import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main_resultado.*
-import kotlinx.android.synthetic.main.activity_main_resultado.view.*
-import java.math.BigDecimal
-import java.math.RoundingMode
-import java.text.DecimalFormat
+//import kotlinx.android.synthetic.main.activity_main_resultado.view.*
+//import java.math.BigDecimal
+//import java.math.RoundingMode
+//import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 
@@ -35,10 +37,10 @@ class MainResultado : AppCompatActivity() {
         val resultado5 = intent.getDoubleExtra(FCO5,0.0)
 
         val format = NumberFormat.getCurrencyInstance(Locale("pt","br"))
-        //AlertDialog.Builder(this)
-        //        .setTitle("Juros")
-        //        .setMessage("Valor-A $resultado4")
-        //        .setPositiveButton("Ok", { dialog, which -> }).show()
+        AlertDialog.Builder(this)
+                .setTitle("Juros")
+                .setMessage("Valor-A $resultado4")
+                .setPositiveButton("Ok", { dialog, which -> }).show()
 
         //AlertDialog.Builder(this)
         //        .setTitle("Juros")
@@ -58,7 +60,7 @@ class MainResultado : AppCompatActivity() {
         //valortotpre = valortotpre.replace(".",",")
         var valortotpre: String = format.format(resultado1+resultado2)
 
-        txdias.text = resultado3.toString() + " Dia(s) do Vencimento"
+        //*txdias.text = resultado3.toString() + " Dia(s) do Vencimento"
 
         txdias.textSize = 20F
         txvlrprest.text        = valorpre
@@ -83,16 +85,16 @@ class MainResultado : AppCompatActivity() {
 
         //Resultao Calculo Valor PorConta
         //var valorpc = resultado4.toString()
-        var valorpc = las1
+        //*var valorpc = las1
         //valorpc =  valorpc.replace(".",",")
-        txvlrpc.text       = valorpc
-        txvlrpc.textSize    = 25F
+        //*txvlrpc.text       = valorpc
+        //*txvlrpc.textSize    = 25F
 
         //var valorjupc = resultado5.toString()
-        var valorjupc = las2
+        //*var valorjupc = las2
         //valorjupc =  valorjupc.replace(".",",")
-        txvlrjurpc.text     = valorjupc
-        txvlrjurpc.textSize = 25F
+        //*txvlrjurpc.text     = valorjupc
+        //*txvlrjurpc.textSize = 25F
 
         //var valortotpc = (resultado4 + resultado5).toString()
         var las3: String = format.format(resultado4+resultado5)
@@ -101,7 +103,7 @@ class MainResultado : AppCompatActivity() {
         txtotpc.text = valortotpc
         txtotpc.textSize = 27F
 
-        val btnSair: Button    = findViewById(R.id.btnSair)
+        val btnSair: Button = findViewById(R.id.btnSair)
         btnSair.setOnClickListener {
            finish()
         }
