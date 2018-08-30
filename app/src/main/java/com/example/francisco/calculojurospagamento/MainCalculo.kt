@@ -119,6 +119,9 @@ class MainCalculo : AppCompatActivity() {
                 //var users = usersDBHelper.readUser("DTI20180122")
                 val vl_taxa_vencimento: Double = usersDBHelper.readUser1(buscaVenc)
                 val vl_taxa_pagamento: Double = usersDBHelper.readUser1(buscaPagto)
+
+               //-- val vl_taxa_pagamento: Double = 2.00
+               //-- val vl_taxa_vencimento: Double = 3.00
                    // users.forEach {
                    //     var tv_user = TextView(this)
                    //     tv_user.text = it.cd_chave.toString() + " - " + it.vl_taxa.toString()
@@ -167,26 +170,26 @@ class MainCalculo : AppCompatActivity() {
                 var vl_prespc1 = df1.format(vl_prespc)
 
 
-                vl_finalpc5 = (a.toDouble() - vl_prespc1.toDouble()) * 1000
-                vl_finalpc6 = vl_finalpc5.toInt()
-                vl_finalpc10 = (vl_finalpc6.toDouble() / 1000)
-                val vl_jurospc: Double = vl_finalpc10
+                //--vl_finalpc5 = (a.toDouble() - vl_prespc1.toDouble()) * 1000
+                //--vl_finalpc6 = vl_finalpc5.toInt()
+                //--vl_finalpc10 = (vl_finalpc6.toDouble() / 1000)
+                //--val vl_jurospc: Double = vl_finalpc10
 
 
                   AlertDialog.Builder(this)
                         .setTitle("Juros")
-                        .setMessage("Valor $vl_prespc1")
+                        .setMessage("Valor $vl_prespc")
                         .setPositiveButton("Ok", { dialog, which -> }).show()
 
                // conts val FCO
-                val resultadoIntent =  Intent(this, MainResultado::class.java)
+              //--  val resultadoIntent =  Intent(this, MainResultado::class.java)
               //  resultadoIntent.putExtra(MainResultado.FCO,b)
-                resultadoIntent.putExtra(MainResultado.FCO1,a.toDouble())
-                resultadoIntent.putExtra(MainResultado.FCO2,b)
-                resultadoIntent.putExtra(MainResultado.FCO3,numDias.toInt())
-                resultadoIntent.putExtra(MainResultado.FCO4,vl_prespc1.toDouble())
-                resultadoIntent.putExtra(MainResultado.FCO5,vl_jurospc)
-                startActivity(resultadoIntent);
+              //--  resultadoIntent.putExtra(MainResultado.FCO1,a.toDouble())
+              //--  resultadoIntent.putExtra(MainResultado.FCO2,b)
+              //--  resultadoIntent.putExtra(MainResultado.FCO3,numDias.toInt())
+              //--  resultadoIntent.putExtra(MainResultado.FCO4,vl_prespc1.toDouble())
+              //--  resultadoIntent.putExtra(MainResultado.FCO5,vl_jurospc)
+               //-- startActivity(resultadoIntent);
             }
         }
 
