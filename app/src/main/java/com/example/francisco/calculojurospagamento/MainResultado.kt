@@ -78,23 +78,23 @@ class MainResultado : AppCompatActivity() {
         var las2: String = format.format(resultado5)
 
 
-        //AlertDialog.Builder(this)
-        //        .setTitle("Juros")
-        //        .setMessage("Valor-C $las1")
-         //       .setPositiveButton("Ok", { dialog, which -> }).show()
+        AlertDialog.Builder(this)
+                .setTitle("Juros")
+                .setMessage("Valor-Z $las1")
+               .setPositiveButton("Ok", { dialog, which -> }).show()
 
         //Resultao Calculo Valor PorConta
         //var valorpc = resultado4.toString()
-        //*var valorpc = las1
+        var valorpc = las1
         //valorpc =  valorpc.replace(".",",")
-        //*txvlrpc.text       = valorpc
-        //*txvlrpc.textSize    = 25F
+        txvlrpc.text       = valorpc
+        txvlrpc.textSize    = 25F
 
         //var valorjupc = resultado5.toString()
-        //*var valorjupc = las2
+        var valorjupc = las2
         //valorjupc =  valorjupc.replace(".",",")
-        //*txvlrjurpc.text     = valorjupc
-        //*txvlrjurpc.textSize = 25F
+        txvlrjurpc.text     = valorjupc
+        txvlrjurpc.textSize = 25F
 
         //var valortotpc = (resultado4 + resultado5).toString()
         var las3: String = format.format(resultado4+resultado5)

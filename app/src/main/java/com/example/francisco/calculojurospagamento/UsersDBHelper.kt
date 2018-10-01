@@ -191,7 +191,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
 */
     companion object {
         // If you change the database schema, you must increment the database version.
-        val DATABASE_VERSION = 8
+        val DATABASE_VERSION = 9
         val DATABASE_NAME = "CLAUDINO.db"
 
         private val SQL_CREATE_ENTRIES =
