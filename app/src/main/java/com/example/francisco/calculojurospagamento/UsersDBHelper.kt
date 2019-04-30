@@ -154,7 +154,7 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         //}
         db.execSQL("DELETE FROM juratraso")
         for (linha in juroscsv) {
-            Log.d("#DB","Atualizando...");
+            //Log.d("#DB","Atualizando...");
             var dados = linha.split("|")
             db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('"+dados[0]+"',"+dados[1]+")")
         }

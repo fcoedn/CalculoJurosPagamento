@@ -37,10 +37,10 @@ class MainResultado : AppCompatActivity() {
         val resultado5 = intent.getDoubleExtra(FCO5,0.0)
 
         val format = NumberFormat.getCurrencyInstance(Locale("pt","br"))
-        AlertDialog.Builder(this)
-                .setTitle("Juros")
-                .setMessage("Valor-A $resultado4")
-                .setPositiveButton("Ok", { dialog, which -> }).show()
+        //AlertDialog.Builder(this)
+        //        .setTitle("Juros")
+        //        .setMessage("Valor-A $resultado4")
+        //        .setPositiveButton("Ok", { dialog, which -> }).show()
 
         //AlertDialog.Builder(this)
         //        .setTitle("Juros")
@@ -78,10 +78,10 @@ class MainResultado : AppCompatActivity() {
         var las2: String = format.format(resultado5)
 
 
-        AlertDialog.Builder(this)
-                .setTitle("Juros")
-                .setMessage("Valor-Z $las1")
-               .setPositiveButton("Ok", { dialog, which -> }).show()
+       // AlertDialog.Builder(this)
+       //         .setTitle("Juros")
+       //         .setMessage("Valor-P $resultado2")
+       //        .setPositiveButton("Ok", { dialog, which -> }).show()
 
         //Resultao Calculo Valor PorConta
         //var valorpc = resultado4.toString()
