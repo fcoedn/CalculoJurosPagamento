@@ -152,12 +152,16 @@ class UsersDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,
         //    Log.d("#csv", loop.toString())
         //    loop = loop + 1
         //}
+        var dados = arrayOf<String>("A","B")
+        db.beginTransaction()
         db.execSQL("DELETE FROM juratraso")
         for (linha in juroscsv) {
             //Log.d("#DB","Atualizando...");
-            var dados = linha.split("|")
+            dados = linha.split("|").toTypedArray()
             db.execSQL("INSERT INTO JURATRASO (cd_chave,vl_taxa) VALUES ('"+dados[0]+"',"+dados[1]+")")
         }
+        db.setTransactionSuccessful();
+        db.endTransaction();
 
        // Log.d("#csv","OK OKOKOK>>");
     }

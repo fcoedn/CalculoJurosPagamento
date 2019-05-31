@@ -70,7 +70,7 @@ class MainNovoMes : AppCompatActivity() {
                     handler.post(Runnable {
                         progress_bar.progress = progressStatus
 
-                        Log.d("#DB","Nascimento Filho>>");
+                       // Log.d("#DB","Nascimento Filho>>");
 
                         // Show the progress on text view
                         text_view.text = progressStatus.toString()

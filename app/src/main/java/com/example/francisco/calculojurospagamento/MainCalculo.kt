@@ -186,7 +186,7 @@ class MainCalculo : AppCompatActivity() {
                 //  AlertDialog.Builder(this)
                 //        .setTitle("Juros-X")
                 //        .setMessage("Valor $vl_jurospc")
-                //        .setPositiveButton("Ok", { dialog, which -> }).show()
+                //          .setPositiveButton("Ok", { dialog, which -> }).show()
 
                // conts val FCO
                val resultadoIntent =  Intent(this, MainResultado::class.java)
