@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/lbPrestacao"
-        android:layout_width="119dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="52dp"
         android:text="@string/presta_o"
@@ -18,11 +18,13 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/guideline31"
         app:layout_constraintTop_toTopOf="parent" />
+    <!-- android:layout_width="119dp"
+    android:layout_height="28dp" -->
 
     <TextView
         android:id="@+id/lbTotalPre"
-        android:layout_width="119dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
         android:text="T O T AL"
@@ -31,11 +33,13 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/guideline24" />
+    <!-- android:layout_width="119dp"
+    android:layout_height="28dp" -->
 
     <TextView
         android:id="@+id/lbPorConta"
-        android:layout_width="119dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="PorConta"
         android:textSize="18sp"
@@ -43,11 +47,13 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline26"
         app:layout_constraintStart_toEndOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/guideline25" />
+    <!-- android:layout_width="119dp"
+    android:layout_height="28dp" -->
 
     <TextView
         android:id="@+id/lbJurosPc"
-        android:layout_width="119dp"
-        android:layout_height="26dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="7dp"
         android:text="Juros"
@@ -55,11 +61,13 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/guideline26" />
+    <!-- android:layout_width="119dp"
+    android:layout_height="26dp" -->
 
     <TextView
         android:id="@+id/lbTotalPc"
-        android:layout_width="119dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="17dp"
         android:text="T O T A L"
@@ -68,31 +76,37 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/guideline27" />
+    <!-- android:layout_width="119dp"
+    android:layout_height="28dp" -->
 
     <Button
         android:id="@+id/btnNovoCal"
-        android:layout_width="126dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginTop="53dp"
         android:text="Novo Cálculo"
         app:layout_constraintStart_toEndOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/guideline28" />
+    <!-- android:layout_width="126dp"
+    android:layout_height="wrap_content" -->
 
     <Button
         android:id="@+id/btnSair"
-        android:layout_width="126dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="60dp"
         android:text="Sair"
         app:layout_constraintStart_toEndOf="@+id/guideline29"
         app:layout_constraintTop_toBottomOf="@+id/guideline28" />
+    <!-- android:layout_width="126dp"
+    android:layout_height="wrap_content" -->
 
     <TextView
         android:id="@+id/txvlrprest"
-        android:layout_width="169dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
         android:text="VlrPrest"
         android:textAlignment="textEnd"
@@ -100,11 +114,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/lbPrestacao"
         app:layout_constraintEnd_toStartOf="@+id/guideline30"
         app:layout_constraintTop_toTopOf="@+id/lbPrestacao" />
+    <!-- android:layout_width="169dp"
+    android:layout_height="39dp" -->
 
     <TextView
         android:id="@+id/txvlrjurospre"
-        android:layout_width="169dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="JurosPrest"
         android:textAlignment="textEnd"
         android:textSize="18sp"
@@ -112,11 +128,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline30"
         app:layout_constraintTop_toTopOf="@+id/lbJurosPre"
         app:layout_constraintVertical_bias="0.0" />
+    <!-- android:layout_width="169dp"
+    android:layout_height="39dp" -->
 
     <TextView
         android:id="@+id/txtotalprest"
-        android:layout_width="169dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Total Pre"
         android:textAlignment="textEnd"
         android:textSize="18sp"
@@ -124,19 +142,23 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline30"
         app:layout_constraintTop_toTopOf="@+id/lbTotalPre"
         app:layout_constraintVertical_bias="0.0" />
+    <!-- android:layout_width="169dp"
+    android:layout_height="39dp" -->
 
     <TextView
         android:id="@+id/txdias"
-        android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="170dp"
         tools:layout_editor_absoluteY="16dp" />
+    <!-- android:layout_width="90dp"
+    android:layout_height="28dp" -->
 
     <TextView
         android:id="@+id/txvlrpc"
-        android:layout_width="160dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="TextView"
         android:textAlignment="textEnd"
         android:textSize="18sp"
@@ -144,11 +166,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline30"
         app:layout_constraintTop_toTopOf="@+id/lbPorConta"
         app:layout_constraintVertical_bias="0.0" />
+    <!-- android:layout_width="160dp"
+    android:layout_height="39dp" -->
 
     <TextView
         android:id="@+id/txvlrjurpc"
-        android:layout_width="169dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="TextView"
         android:textAlignment="textEnd"
         android:textSize="18sp"
@@ -156,11 +180,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline30"
         app:layout_constraintTop_toTopOf="@+id/lbJurosPc"
         app:layout_constraintVertical_bias="0.0" />
+    <!-- android:layout_width="169dp"
+    android:layout_height="39dp" -->
 
     <TextView
         android:id="@+id/txtotpc"
-        android:layout_width="160dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="TextView"
         android:textAlignment="textEnd"
         android:textSize="18sp"
@@ -168,6 +194,8 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline30"
         app:layout_constraintTop_toTopOf="@+id/lbTotalPc"
         app:layout_constraintVertical_bias="0.0" />
+    <!-- android:layout_width="160dp"
+    android:layout_height="39dp" -->
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline22"
@@ -248,8 +276,8 @@
 
     <TextView
         android:id="@+id/lbJurosPre"
-        android:layout_width="119dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         android:text="Juros"
@@ -257,5 +285,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/guideline23" />
+    <!-- android:layout_width="119dp"
+    android:layout_height="28dp" -->
 
 </android.support.constraint.ConstraintLayout>

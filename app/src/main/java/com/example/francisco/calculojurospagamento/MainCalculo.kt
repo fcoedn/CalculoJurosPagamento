@@ -20,6 +20,7 @@ import java.text.DecimalFormat
 //import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlinx.android.synthetic.main.activity_main_calculo.*
 
 class MainCalculo : AppCompatActivity() {
 
@@ -80,8 +81,9 @@ class MainCalculo : AppCompatActivity() {
         val btnCalcular: Button = findViewById(R.id.btnCalcular)
         //btnCalcular.text = "Rogerio"
         btnCalcular.setOnClickListener {
-            val vlraPagar: EditText = findViewById(R.id.VlrPagar)
-            val a: String = vlraPagar.text.toString()
+            //val vlraPagar: EditText = findViewById(R.id.VlrPagar)
+            //val a: String = vlraPagar.text.toString()
+            val a: Double = VlrPagar.text.toString().toDouble()
 
             val DtVencimento1 = DtVencimento.text
             val buscaVenc = "GP2" + DtVencimento1.substring(6,10) + DtVencimento1.substring(3,5) +
@@ -103,7 +105,7 @@ class MainCalculo : AppCompatActivity() {
             var numDias: Long = (dtPagar.time - dtVenc.time) / (24*60*60*1000)
             var numDiasC = when {numDias > 150 -> 150
                             else -> numDias}
-            if (a.isEmpty()) {
+            if (a == null || a == 0.00) {
                 Toast.makeText(applicationContext, "Valor Incorreto", Toast.LENGTH_SHORT).show()
              }
              else if (dtPagar <= dtVenc) {
@@ -167,11 +169,11 @@ class MainCalculo : AppCompatActivity() {
 
                 val df1 = DecimalFormat("#.###")
                 df1.roundingMode = RoundingMode.CEILING
-                var vl_prespc1: String = df1.format(vl_prespc)
+                var vl_prespc1 = df1.format(vl_prespc)
 
                 var vl_finalpc11: Double = 0.00
                 try {
-                     vl_finalpc11 = (a.toDouble() - vl_prespc1.toDouble()) * 1000.00
+                     vl_finalpc11 = (a - vl_prespc) * 1000.00
                 } catch (e: NumberFormatException) {
                     vl_finalpc11 = 0.01
                 }
@@ -184,7 +186,7 @@ class MainCalculo : AppCompatActivity() {
 
 
                 //  AlertDialog.Builder(this)
-                //        .setTitle("Juros-X")
+                //        .setTitle("Juros-A")
                 //        .setMessage("Valor $vl_jurospc")
                 //          .setPositiveButton("Ok", { dialog, which -> }).show()
 
@@ -194,7 +196,7 @@ class MainCalculo : AppCompatActivity() {
                 resultadoIntent.putExtra(MainResultado.FCO1,a.toDouble())
                 resultadoIntent.putExtra(MainResultado.FCO2,b.toDouble())
                 resultadoIntent.putExtra(MainResultado.FCO3,numDias.toInt())
-                resultadoIntent.putExtra(MainResultado.FCO4,vl_prespc1.toDouble())
+                resultadoIntent.putExtra(MainResultado.FCO4,vl_prespc)
                 resultadoIntent.putExtra(MainResultado.FCO5,vl_jurospc)
                 startActivity(resultadoIntent);
             }
@@ -206,6 +208,12 @@ class MainCalculo : AppCompatActivity() {
         }
     }
 
+    fun roundOffDecimal(number: Double): Double? {
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.CEILING
+        //df.roundingMode = RoundingMode.FLOOR
+        return df.format(number).toDouble()
+    }
     // Antes chamado pelo activity_main_calculo.xml
     //fun infdtpagamento1 (view: View) {
 
